@@ -208,3 +208,268 @@ body.menu-open::after {
 body.menu-open::after {
     display: block;
 }
+
+.back-video {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.back-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Custom video controls */
+.custom-video-controls {
+    position: absolute;
+    bottom: 25px;
+    left: 55%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.custom-video-controls button {
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.custom-video-controls button:hover {
+    background: rgba(0,0,0,0.7);
+    transform: scale(1.05);
+}
+.text-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.video-container-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 700px;
+}
+
+.video-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.video-link:hover {
+    transform: scale(1.02);
+    
+}
+
+.video-link .video-box {
+    transition: all 0.3s ease;
+}
+
+.video-link:hover .video-box {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.video-box {
+    border-radius: 10px;
+    width: 450px;
+    height: 640px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.video-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.7s ease;
+}
+
+.video-box:hover .background-video {
+    transform: scale(1.1);
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+    transition: background 0.3s ease;
+}
+
+.video-box:hover .video-overlay {
+    background: rgba(0,0,0,0.1);
+}
+.arvr-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.arvr-img img{
+  border-radius: 20px;
+}
+.ar-vr-btn
+{
+  position: absolute;
+  top: 450px;
+  display: flex;
+  gap: 500px;
+  margin-top: 40px;
+}
+.ar-vr-btn button
+{
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: white;
+  border: solid 2px yellow
+}
+.memories-section {
+    min-height: 100vh;
+    position: relative;
+    padding: 4rem 0;
+    overflow: hidden;
+}
+
+.memories-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.memories-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.memories-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: 1;
+}
+
+  .image-card {
+    width: 320px;
+    height: 420px;
+    border: none;
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .image-card:hover {
+    transform: scale(1.03);
+  }
+
+  .card-img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-img-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    padding: 1rem;
+  }
+
+  .nav-btn {
+    background-color: #fff;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    border: 2px solid #f0a500;
+    color: #f0a500;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .nav-btn:hover {
+    background-color: #f0a500;
+    color: #fff;
+  }
+
+  .scroll-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    cursor: grab;
+    padding-bottom: 10px;
+  }
+
+  .scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scroll-container:active {
+    cursor: grabbing;
+  }
+  .transparent-text{
+    margin-top: 5rem;
+   
+  }
+  .transparent-img{
+    
+    width: 100%;
+    top: 12rem;
+    position: absolute;
+    height: 600px;
+  }
+  .transparent-container{
+    position: relative;
+    background-attachment: fixed;
+    background-image: url('alo.jpg');
+    width: 100%;
+    height: 600px;
+  }
+  .text-center{
+    margin-left: 600px;
+  }
