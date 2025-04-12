@@ -6,8 +6,8 @@ function showGallery(type) {
   // Show selected gallery
   document.getElementById(`${type}-gallery`).style.display = 'flex';
 }
-const images = ["img/lotus.png", "img/mint.jpg", "img/guduchi.jpg"];
-const videos = ["img/video1.mp4", "img/video2.mp4", "video3.mp4"];
+const images = ["ooty2.jpeg", "ooty.webp", "img/guduchi.jpg"];
+const videos = ["", "img/video2.mp4", "video3.mp4"];
 
 let imgIndex = 0;
 let vidIndex = 0;
