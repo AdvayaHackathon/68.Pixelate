@@ -21,20 +21,21 @@
     </div>
     <div id="location-buttons">
        <button onclick="goTo(0)">Entrance</button>
-      <button onclick="goTo(270)">Nandi</button>
-      <button onclick="goTo(270)">Dwarapalaka</button>
-      <button onclick="goTo(270)">Lingam</button>
+      <button onclick="goTo(271)">Nandi</button>
+      <button onclick="goTo(272)">garbagarha</button>
+      <button onclick="goTo(270)">Vimana</button>
       <button onclick="goTo(270)">First Courtyard</button>
     </div>
     <div id="street-view"></div>
     <!-- Sculpture Labels -->
     <div class="custom-label" id="courtyard-label">
-      <div style="font-weight:bold;margin-bottom:5px;">Entrance <br>
+      <div style="font-weight:bold;margin-bottom:5px;">First courtyard <br>
         Welcome to the Brihadeeswarar Temple, or Thanjai Periya Kovil. <br> Built over 1000 years ago by Raja Raja Chola I, this grand <br> temple greets you with its elegant entrance <br> tower — modest in height, yet mighty in legacy.</div>
       
     </div>
     <div class="custom-label" id="entrance-label">
       <div style="font-weight:bold;margin-bottom:5px;">
+        ENTRANCE <br>
         As you walk in, you enter a vast granite courtyard. <br>
          Amazingly, there's no granite nearby — imagine the <br>
           planning it took to bring every stone <br> here. A true Chola engineering marvel! </div>
@@ -126,12 +127,12 @@
             let targetLocation;
             
             // Set location based on heading
-            if (heading === 270) { // Nandi or First Courtyard
+            if (heading === 271) { // Nandi or First Courtyard
               targetLocation = heading === 270 ? 
               {lat: 10.783170, lng: 79.132842}:
                 {lat: 10.782972, lng: 79.132250} ;// Nandi
                ;  // First Courtyard
-            } else if (heading === 90) { // Dwarapalaka
+            } else if (heading === 272) { // Dwarapalaka
               targetLocation = {lat: 10.782829, lng: 79.131980};
             } else if (heading === 0) { // Entrance
               targetLocation = {lat: 10.783218, lng: 79.132975};
