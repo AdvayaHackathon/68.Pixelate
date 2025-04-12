@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.guide-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.guide-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.guide-card:hover {
+    transform: translateY(-5px);
+}
+
+.guide-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 5px solid #3498db;
+}
+
+.guide-card h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.guide-card p {
+    color: #555;
+    margin: 5px 0;
+}
+
+.contact-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: #2980b9;
+}
