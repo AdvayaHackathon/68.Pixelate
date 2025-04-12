@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Brihadeeswarar Temple - Nandi Sculpture Label</title>
+    <link rel="stylesheet" href="indexdup.css">
+   
+  </head>
+<body>
+    <button id="fullscreen-btn" style="position:absolute; top:20px; right:20px; z-index:1000; padding:8px 14px; background:rgba(0,0,0,0.7); color:#ffd700; border:1px solid #ffd700; border-radius:8px; cursor:pointer;">
+        Fullscreen
+    </button>
+    <div id="location-buttons">
+      <button onclick="goTo(270)">Nandi</button>
+      <button onclick="goTo(90)">Dwarapalaka</button>
+      <button onclick="goTo(180)">Lingam</button>
+    </div>
+    <div id="street-view"></div>
+    <!-- Sculpture Labels -->
+    <div class="custom-label" id="nandi-label">
+      <div style="font-weight:bold;margin-bottom:5px;">நந்தி சிலை</div>
+      <div style="font-size:14px;">Nandi - Sacred Bull</div>
+      <div style="font-size:12px;margin-top:5px;">Monolithic sculpture, 16th century</div>
+    </div>
+    <div class="custom-label" id="dwarapalaka-label">
+      <div style="font-weight:bold;margin-bottom:5px;">துவாரபாலகர்</div>
+      <div style="font-size:14px;">Dwarapalaka - Guardian Deity</div>
+      <div style="font-size:12px;margin-top:5px;">Granite sculpture, 11th century</div>
+    </div>
+    <div class="custom-label" id="lingam-label">
+      <div style="font-weight:bold;margin-bottom:5px;">லிங்கம்</div>
+      <div style="font-size:14px;">Shiva Lingam</div>
+      <div style="font-size:12px;margin-top:5px;">Main deity, 11th century</div>
+    </div>
+
+    <!-- Audio elements with preload -->
+    <audio id="nandi-audio" src="brihadeeswarar.mp3" preload="auto"></audio>
+    <audio id="dwarapalaka-audio" src="brihadeeswara2.mp3" preload="auto"></audio>
+    <audio id="lingam-audio" src="brihadeeswarar.mp3" preload="auto"></audio>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn1e69N7W796mhf8yY69hXdFN2dK9MCWU&callback=initPanorama" async defer></script>
+
+    
+
+    <script>
+        let panorama = null;
+        let panoramaReady = false;
+
+        // Try to enable audio automatically
+        function enableAudio() {
+          try {
+            // Attempt to play a silent audio to unlock audio
+            const audio = new Audio();
+            audio.src = 'data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YU...';
+            audio.volume = 0;
+            return audio.play().then(() => {
+              audio.pause();
+              return true;
+            }).catch(e => {
+              console.log('Auto audio enable failed:', e);
+              return false;
+            });
+          } catch(e) {
+            console.log('Audio initialization error:', e);
+            return false;
+          }
+        }
+
+        // Initialize audio on page load
+        let audioEnabled = enableAudio();
+
+        function goTo(heading) {
+          if (!panoramaReady) {
+            alert("Please wait while Street View loads...");
+            return;
+          }
+          if (!audioEnabled) {
+            // If auto-enable failed, try again with user interaction
+            audioEnabled = enableAudio();
+            if (!audioEnabled) {
+              alert("Please click anywhere on the page to enable audio");
+              return;
+            }
+          }
+          try {
+            const svService = new google.maps.StreetViewService();
+            let targetLocation;
+            
+            // Set location based on heading
+            if (heading === 270) { // Nandi
+              targetLocation = {lat: 10.782972, lng: 79.132250};
+            } else if (heading === 90) { // Dwarapalaka
+              targetLocation = {lat: 10.782443, lng: 79.130921};
+            } else { // Lingam
+              targetLocation = {lat: 10.783050, lng: 79.132200};
+            }
+
+            svService.getPanorama({
+              location: targetLocation,
+              radius: 50
+            }, (data, status) => {
+              if (status === 'OK') {
+                panorama.setPov({
+                  heading: heading,
+                  pitch: 0,
+                  zoom: 1
+                });
+                panorama.setPano(data.location.pano);
+              } else {
+                alert("Couldn't find Street View at this location.");
+              }
+            });
+          } catch (e) {
+            alert("Couldn't navigate to that view. Please try again.");
+          }
+        }
+
+        function initPanorama() {
+          panoramaReady = false;
+          const sculptures = [
+            {
+              id: "nandi",
+              location: { lat: 10.782972, lng: 79.132250 },
+              heading: 270,
+              pitch: 0
+            },
+            {
+              id: "dwarapalaka",
+              location: { lat: 10.782443, lng:  79.130921 },
+              heading: 90,
+              pitch: 0
+            },
+            {
+              id: "lingam",
+              location: { lat: 10.783050, lng: 79.132200 },
+              heading: 180,
+              pitch: 0
+            }
+          ];
+
+          const visibleRange = 15; // degrees
+          const distanceThreshold = 10; // meters
+
+          const svService = new google.maps.StreetViewService();
+          svService.getPanorama({ location: sculptures[0].location, radius: 30 }, (data, status) => {
+            if (status === "OK") {
+              panorama = new google.maps.StreetViewPanorama(document.getElementById("street-view"), {
+                pano: data.location.pano,
+                pov: { heading: 250, pitch: 0 },
+                visible: true,
+                addressControl: false,
+                linksControl: true,
+                fullscreenControl: false
+              });
+
+              // Initialize all labels
+              sculptures.forEach(sculpture => {
+                sculpture.labelEl = document.getElementById(`${sculpture.id}-label`);
+              });
+
+              let currentActiveLocation = null;
+              
+              panorama.addListener("pov_changed", () => {
+                const pov = panorama.getPov();
+                const pos = panorama.getPosition();
+                let newActiveLocation = null;
+
+                sculptures.forEach(sculpture => {
+                  const headingDiff = Math.abs(pov.heading - sculpture.heading);
+                  const pitchDiff = Math.abs(pov.pitch - sculpture.pitch);
+                  
+                  const distance = google.maps.geometry.spherical.computeDistanceBetween(
+                    pos,
+                    new google.maps.LatLng(sculpture.location.lat, sculpture.location.lng)
+                  );
+
+                  const isVisible = headingDiff <= visibleRange && 
+                                  pitchDiff <= visibleRange &&
+                                  distance <= distanceThreshold;
+
+                  sculpture.labelEl.style.display = isVisible ? "block" : "none";
+                  
+                  if (isVisible) {
+                    newActiveLocation = sculpture.id;
+                  }
+                });
+
+                // Only change audio if we've entered a new location's proximity
+                if (newActiveLocation && newActiveLocation !== currentActiveLocation) {
+                  // Stop any currently playing audio
+                  document.querySelectorAll('audio').forEach(a => {
+                    a.pause();
+                    a.currentTime = 0;
+                  });
+                  
+                  // Play audio for new location
+                  if (newActiveLocation === 'nandi') {
+                    playNandiAudio();
+                  } else if (newActiveLocation === 'dwarapalaka') {
+                    const audio = document.getElementById('dwarapalaka-audio');
+                    audio.currentTime = 0;
+                    audio.play().catch(console.error);
+                  } else if (newActiveLocation === 'lingam') {
+                    const audio = document.getElementById('lingam-audio');
+                    audio.currentTime = 0;
+                    audio.play().catch(console.error);
+                  }
+                  
+                  currentActiveLocation = newActiveLocation;
+                }
+                
+                // If we're not near any location, keep playing current audio
+                // Audio will only stop when we reach a new location
+              });
+              panoramaReady = true;
+            } else {
+              alert("Couldn't load the Street View.");
+            }
+          });
+        }
+
+        // Disable buttons initially
+        // Audio control functions
+        function playNandiAudio() {
+          try {
+            const audio = document.getElementById('nandi-audio');
+            audio.loop = true; // Enable looping for continuous playback
+            audio.currentTime = 0;
+            audio.play().catch(e => {
+              console.error('Audio error:', e);
+            });
+          } catch(e) {
+            console.error('Audio error:', e);
+          }
+        }
+
+        // Initialize audio looping and buttons
+        document.addEventListener('DOMContentLoaded', function() {
+          // Enable audio looping
+          document.querySelectorAll('audio').forEach(audio => {
+            audio.loop = true;
+          });
+          
+          // Disable buttons initially
+          const buttons = document.querySelectorAll('#location-buttons button');
+          buttons.forEach(btn => btn.disabled = true);
+          
+          // Enable after panorama loads
+          const checkReady = setInterval(() => {
+            if (panoramaReady) {
+              buttons.forEach(btn => btn.disabled = false);
+              clearInterval(checkReady);
+            }
+          }, 500);
+        });
+      </script>
+      
+    <script>
+        document.getElementById('fullscreen-btn').addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    alert(`Error attempting to enable fullscreen: ${err.message}`);
+                });
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        });
+
+        // Update button text based on fullscreen state
+        document.addEventListener('fullscreenchange', () => {
+            const btn = document.getElementById('fullscreen-btn');
+            btn.textContent = document.fullscreenElement ? 'Exit Fullscreen' : 'Fullscreen';
+        });
+    </script>
+  </body>
+</html>

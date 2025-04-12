@@ -1,0 +1,199 @@
+/* Base styles */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+:fullscreen #street-view {
+    width: 100vw;
+    height: 100vh;
+}
+
+:fullscreen #location-buttons {
+    top: 30px;
+    left: 30px;
+}
+
+:fullscreen #fullscreen-btn {
+    top: 30px;
+    right: 30px;
+}
+
+:fullscreen .custom-label {
+    font-size: 24px;
+    padding: 16px 24px;
+}
+
+#street-view {
+    height: 100vh;
+    width: 100%;
+    filter: grayscale(50%) brightness(0.7);
+}
+
+/* Navigation buttons */
+#location-buttons {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+#location-buttons button {
+    margin: 5px;
+    padding: 8px 14px;
+    background: rgba(0,0,0,0.7);
+    color: #ffd700;
+    border: 1px solid #ffd700;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+#street-view {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    filter: brightness(1.1) contrast(1.1) saturate(1.2);
+  }
+
+  .custom-label {
+    position: absolute;
+    background:black;
+    color: #d4af37;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+    top: 30%;
+    left: 40%;
+    z-index: 999;
+    display: none;
+    pointer-events: none;
+    font-family: 'Arial', sans-serif;
+    border: 2px solid #d4af37;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+    text-align: center;
+    min-width: 200px;
+  }
+  #location-buttons {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+  }
+  #location-buttons button {
+    margin: 5px;
+    padding: 8px 14px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  #location-buttons button {
+    background: linear-gradient(to bottom, #d4af37, #f1c40f);
+    color: #2c3e50;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+  }
+
+  #location-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+#location-buttons button:hover {
+    background: rgba(255,215,0,0.2);
+}
+
+/* Sculpture labels */
+.custom-label {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.85);
+    color: #ffd700;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+    top: 60%;
+    left: 40%;
+    z-index: 999;
+    display: none;
+    pointer-events: none;
+    font-family: 'Arial', sans-serif;
+    border: 2px solid #ffd700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    text-align: center;
+    min-width: 200px;
+}
+
+/* Mobile devices (portrait) */
+@media (max-width: 767px) and (orientation: portrait) {
+    #street-view {
+        height: 70vh;
+    }
+    
+    #location-buttons {
+        top: 10px;
+        left: 10px;
+    }
+    
+    #location-buttons button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+    
+    .custom-label {
+        font-size: 14px;
+        padding: 8px 12px;
+        min-width: 160px;
+    }
+}
+
+/* Tablets (landscape) */
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+    .custom-label {
+        font-size: 16px;
+        top: 50%;
+        left: 50%;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+    #location-buttons {
+        flex-direction: row;
+    }
+    
+    .custom-label {
+        min-width: 250px;
+        font-size: 20px;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+    #location-buttons button {
+        border-width: 2px;
+    }
+    
+    .custom-label {
+        border-width: 3px;
+    }
+}
+
+/* Very large screens */
+@media (min-width: 1600px) {
+    .custom-label {
+        font-size: 24px;
+        padding: 16px 24px;
+    }
+}

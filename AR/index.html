@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stay Selector</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <a href="#">Where want to go</a>
+    <a href="#">Experience</a>
+    <a href="#">Stay connect</a>
+    <a href="#">VR vision</a>
+  </header>
+
+  <div class="hero">
+    <h1>Food</h1>
+    <p>Explore the AR food</p>
+  </div>
+
+  <div class="buttons">
+    <button onclick="showContent('hotel')">Non-Veg</button>
+    <button onclick="showContent('homestay')">Veg</button>
+    <button onclick="showContent('resort')">Sweet</button>
+  </div>
+
+  <div class="image-container" id="imageContainer"><a href=""></a></div>
+
+  <div class="qr-toggle">
+    <button class="qr-button" onclick="toggleQR()">Open QR</button>
+  </div>
+
+  <div class="qr-container" id="qrContainer" style="display: none;"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
