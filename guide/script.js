@@ -142,7 +142,7 @@ guides.forEach(guide => {
             <p><strong>Location:</strong> ${guide.location}</p>
             <p><strong>Languages:</strong> ${guide.languages}</p>
             <p><strong>Experience:</strong> ${guide.experience}</p>
-            <a href="tel:${guide.phone}" class="contact-btn">Contact Guide</a>
+            <a href="../message/user.php" class="contact-btn">Contact Guide</a>
         </div>
     `;
 });

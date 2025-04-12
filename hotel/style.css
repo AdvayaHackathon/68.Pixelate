@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('img/ooty.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  header img {
+    height: 80px;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    animation: popIn 0.8s ease-out forwards;
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  
+  @keyframes popIn {
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .hotel-card {
+    background: #fff;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: flex-start;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUpCard 0.6s ease forwards;
+  }
+  
+  .hotel-card:nth-child(1) { animation-delay: 0.2s; }
+  .hotel-card:nth-child(2) { animation-delay: 0.4s; }
+  .hotel-card:nth-child(3) { animation-delay: 0.6s; }
+  .hotel-card:nth-child(4) { animation-delay: 0.8s; }
+  .hotel-card:nth-child(5) { animation-delay: 1s; }
+  
+  @keyframes fadeInUpCard {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .hotel-card img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+  }
+  
+  .hotel-info {
+    flex: 1;
+  }
+  
+  .hotel-name {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .rating {
+    color: #f39c12;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+  
+  .booking-button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+  }
+  
+  .booking-button:hover {
+    background-color: #2980b9;
+  }
+  
