@@ -1,0 +1,550 @@
+
+
+.navbar {
+    position: static;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height: auto;
+    min-height: 80px;
+    width: 100%;
+    padding: 15px 0;
+    transition: all 0.3s ease;
+}
+
+/* Mobile menu button styling */
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+/* Style for navbar toggle icon */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar a,
+.navbar .nav-link {
+   color: black !important;
+   transition: all 0.3s ease;
+}
+
+.navbar .nav-link.active {
+   color: orange !important;
+    transition: all 0.7s ease;
+   font-weight: bold;
+}
+
+.navbar.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.8) !important;   
+}
+/* Side Menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    color: black;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.5);
+}
+
+.side-menu.open {
+    right: 0;
+}
+
+.menu-content {
+    padding: 80px 20px 20px;
+}
+
+.menu-link {
+    display: block;
+    color: white;
+    padding: 15px;
+    margin: 10px 0;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.menu-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(-10px);
+    border-right: 3px solid #4db8ff;
+    border-left: none;
+}
+
+#menuButton {
+    color: black;
+    padding: 8px 15px;
+    transition: transform 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#menuButton:hover {
+    transform: scale(1.1);
+}
+
+#menuButton svg {
+    vertical-align: middle;
+}
+
+/* Overlay when menu is open */
+body.menu-open::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+    display: block;
+}
+.product-section{
+    margin: 20px;
+}
+.search{
+        width: 80%;
+        border: solid 2px black;   
+        border-radius: 20px; display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        margin: auto;
+}
+.search input:focus{
+    outline: none;
+}
+.products{
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.products-box img{
+    position: relative;
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+    display: block;
+    transition: transform 0.7s ease;
+    transform-origin: center;
+}
+
+.products-box{
+    position: relative;
+    text-align: left;
+    flex-basis: 19%;
+    /* Removed overflow:hidden to prevent border issues */
+}
+
+.products-box:hover img {
+    transform: scale(1.05);
+}
+
+.products-box p {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0;
+    font-size: 16px;
+    max-width: 280px;
+    z-index: 1;
+}
+
+/* Red Shirt Variations Styling */
+.related-images-container {
+    display: none;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+   
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    justify-content: center;
+    align-items: center;
+}
+
+.related-images-container.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+.related-images-container .products-box {
+    flex: 0 0 calc(33.333% - 20px);
+    max-width: 300px;
+    margin: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.related-images-container .products-box:hover {
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.red-shirt-container.active {
+    transform: scale(1.02);
+    z-index: 1;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.search input{
+    border: none;
+    background-color: transparent;
+    width: 100%;
+}
+.contactinfo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 300px;
+    padding-left:36%;
+}
+.contactinfo input{
+    padding: 10px;
+}
+.footer-icon-container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+textarea {
+    height: 50px;
+    position: relative;
+    width: 300px;
+    resize: vertical;
+    font-size: 20px;
+}
+.navbar-links {
+    display: flex;
+    column-gap: 100px;
+    transition: all 0.3s ease;
+}
+.navbar-links a{
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    transition: all 0.3s ease;
+}
+
+.navbar-links a.active {
+    color: orange;
+    text-decoration: underline;
+    text-decoration-color: orange;
+}
+.location-list{
+    margin-top: 80PX;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 992px) {
+    .navbar {
+        padding: 10px 0;
+    }
+    
+    .navbar-collapse {
+        background-color: white;
+        padding: 20px;
+        margin-top: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .navbar-nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .navbar-links {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 0;
+    }
+    
+    .navbar-links a {
+        font-size: 18px;
+        padding: 8px 0;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .navbar-toggler {
+        display: block; /* Ensure the toggle button is displayed */
+    }
+    
+    .navbar-collapse {
+        display: none; /* Hide the navbar items by default */
+    }
+    
+    .navbar-collapse.show {
+        display: block; /* Show navbar items when toggled */
+    }
+    .service-container-1{
+        display: flex;
+        row-gap: 10px;        flex-direction:column;
+    }
+    .service-container-2{
+        flex-direction: column;
+    }  
+    .header img{
+        width: 300px;
+        height: 300px;
+    }
+    textarea{
+        height: 150px;
+    position: relative;
+    width: 190px;
+    resize: vertical;
+    margin: 5px;
+    font-size: 10px;
+    }
+    .new-arrival {
+        flex-direction: column;
+    }
+.contactinfo{
+    width: 200px;
+    padding-left: 25%;
+}
+
+/* Enhanced Location List Styles */
+.location-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.location-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.location-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.location-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.location-card:hover .location-image {
+    transform: scale(1.03);
+}
+
+.location-content {
+    padding: 20px;
+}
+
+.location-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #222;
+    font-weight: 600;
+}
+
+.location-description {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.location-meta {
+    display: flex;
+    gap: 15px;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.location-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.location-meta i {
+    font-size: 1rem;
+}
+
+/* Image Modal Styles */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    max-height: 80vh;
+    object-fit: contain;
+    animation: zoomIn 0.3s;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: #bbb;
+}
+
+.caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    font-size: 1.2rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.8);}
+    to {transform: scale(1);}
+}
+
+/* Responsive improvements */
+@media (max-width: 992px) {
+    .navbar-links {
+        gap: 20px;
+        padding: 10px;
+    }
+    .navbar-links a {
+        font-size: clamp(14px, 2vw, 18px);
+        padding: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .location-list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 15px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        max-height: 60vh;
+    }
+    
+    .close-modal {
+        font-size: 32px;
+        right: 15px;
+        top: 15px;
+    }
+
+    .products-box img {
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-links {
+        gap: 10px;
+    }
+    
+    .modal-content {
+        max-height: 50vh;
+    }
+    
+    .close-modal {
+        font-size: 28px;
+        right: 10px;
+        top: 10px;
+    }
+}
+    
+    
+}

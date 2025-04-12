@@ -1,0 +1,76 @@
+/* style.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f2f7ff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #2a2a2a;
+    margin-bottom: 25px;
+  }
+  
+  .input-section label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #444;
+  }
+  
+  .input-section input,
+  .input-section textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+    box-sizing: border-box;
+  }
+  
+  .input-section textarea {
+    resize: vertical;
+  }
+  
+  .input-section button {
+    background-color: #00a97f;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 16px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .input-section button:hover {
+    background-color: #008f6b;
+  }
+  
+  .output-box {
+    background-color: #fffef4;
+    border: 1px solid #e4e4e4;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 30px;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  

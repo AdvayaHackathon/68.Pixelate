@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video with Text Overlays</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Transparent Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Video Explorer</a> 
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Where want to go</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Experience</a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Stay connect</a>
+                    </li>
+                    <li class="nav-item">
+                        <button id="menuButton" class="nav-link"
+                            style="background: none; border: none; cursor: pointer;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" style="color: black;">
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Left Side Menu -->
+    <div id="sideMenu" class="side-menu">
+        <div class="menu-content">
+            <a href="#" class="menu-link">Events</a>
+            <a href="#" class="menu-link">News Letters</a>
+            <a href="#" class="menu-link">Photo Gallery</a>
+            <a href="#" class="menu-link">Video Gallery</a>
+            <a href="#" class="menu-link">Foods</a>
+        </div>
+    </div>
+
+
+    
+  <div class="location-list">
+    <div class="navbar-links">
+        <p class="navbar-links" onclick=""><a href="index.html">Attractions</a></p>
+        <p class="navbar-links"><a href="collection.html">Art & Culture</a></p>
+        <p class="navbar-links"><a href="contact.html">Picnic Spots</a></p>
+        <p class="navbar-links"><a href="contact.html">Regions</a></p>
+        <p class="navbar-links"><a href="contact.html">Spirituality
+        </a></p>
+        <p class="navbar-links"><a href="contact.html">Food
+        </a></p>
+    </div>
+</div>
+    <div class="product-section">
+       
+    
+        <div class="products" id="product">
+        <div class="products-box red-shirt-container" data-category="attraction">
+           <a href=""> <img src="assets/stefan-stefancik-pmH_Y4Qetrk-unsplash.jpg" alt=""></a>
+        <p>Red Shirt</p>
+        </div>
+        <div class="related-images-container" style="display:none;">
+           
+            <div class="products-box" data-category="attraction">
+                <a href="../tour-page3/tour-page3/ooty.html"><img src="assets/ethan-dow-n4jLGbNfFrE-unsplash.jpg" alt="Red Shirt Variation 2"></a>
+                <p>Red Shirt - Checkered</p>
+            </div>
+            <div class="products-box" data-category="attraction">
+                <img src="assets/sonika-agarwal-EqgB731udRM-unsplash.jpg"Red Shirt Variation 3">
+                <p>Red Shirt - Plain</p>
+            </div>
+        </div>
+        <div class="products-box light-blue-container" data-category="attraction">
+           <a href=""> <img src="assets/laura-college-K_Na5gCmh38-unsplash.jpg" alt=""></a>
+        <p>Light Blue Shirt</p>
+        </div>
+        <div class="related-images-container" style="display:none;">
+           
+            <div class="products-box" data-category="attraction">
+                <img src="assets/zdenek-machacek-UxHol6SwLyM-unsplash.jpg" alt="Light Blue Shirt Variation 2">
+                <p>Light Blue Shirt - Checkered</p>
+            </div>
+            <div class="products-box" data-category="attraction">
+                <img src="assets/sutirta-budiman-Jgiv1rSIpVM-unsplash.jpg" alt="Light Blue Shirt Variation 3">
+                <p>Light Blue Shirt - Plain</p>
+            </div>
+        </div>
+        <div class="products-box attraction-container" data-category="attraction">
+            <a href=""> <img src="assets/mike-swigunski-ueBmz9K8zTg-unsplash.jpg" alt=""></a>
+        <p>Black and White Stripe Shirt</p>
+        </div>
+        <div class="related-images-container" style="display:none;">
+            <div class="products-box" data-category="attraction">
+                <img src="assets/" alt="Black and White Stripe Shirt Variation 1">
+                <p>Black and White Stripe Shirt - Variation 1</p>
+            </div>
+            <div class="products-box" data-category="attraction">
+                <img src="assets/" alt="Black and White Stripe Shirt Variation 2">
+                <p>Black and White Stripe Shirt - Variation 2</p>
+            </div>
+        </div>
+       
+       
+        <div class="products-box" data-category="Art & Culture">
+            <a href=""> <img src="assets/eric-park-QbX8A8eHfzw-unsplash.jpg" alt=""></a>
+        <p>Purple T-Shirt</p>
+        </div>
+        <div class="related-images-container" style="display:none;">
+            <div class="products-box" data-category="Art & Culture">
+                <img src="assets/vincentas-liskauskas-TPhZnl2NEws-unsplash.jpg" alt="Historical Site">
+                <p>Historical Site</p>
+            </div>
+            <div class="products-box" data-category="Art & Culture">
+                <img src="assets/raychan-kJQ6cDyodAM-unsplash.jpg" alt="Traditional Dance">
+                <p>Traditional Dance</p>
+            </div>
+        </div>
+        <div class="products-box" data-category="Art & Culture">
+            <a href=""> <img src="assets/pranav-panchal-XY3OL6TUl_s-unsplash.jpg" alt=""></a>
+        <p>Gray-Coat</p>
+        </div>
+        <div class="related-images-container" style="display:none;">
+            <div class="products-box" data-category="Art & Culture">
+                <img src="assets/vincentas-liskauskas-TPhZnl2NEws-unsplash.jpg" alt="Folk Art">
+                <p>Folk Art</p>
+            </div>
+           
+        </div>
+        
+        <div class="products-box" data-category="Picnic Spots">
+            <a href=""> <img src="assets/gabor-koszegi-auZHn3HI03I-unsplash.jpg" alt=""></a>
+        <p>Sandal-Leather Coat</p>
+        </div>
+        <div class="related-images-container" style="display:none;">
+            <div class="products-box" data-category="Picnic Spots">
+                <img src="assets/prateek-srivastava-BTSBVZd9jWo-unsplash.jpg" alt="Mountain View">
+                <p>Mountain View</p>
+            </div>
+            <div class="products-box" data-category="Picnic Spots">
+                <img src="assets/" alt="Riverside">
+                <p>Riverside</p>
+            </div>
+        </div>
+        <div class="products-box" data-category="Picnic Spots">
+            <a href=""> <img src="assets/grace-ho-zej4HPQLR5o-unsplash.jpg" alt=""></a>
+        <p>Black Coat</p>
+        </div>
+        <div class="related-images-container" style="display:none;">
+            <div class="products-box" data-category="Picnic Spots">
+                <img src="alo.jpg" alt="Beachside">
+                <p>Beachside</p>
+            </div>
+            <div class="products-box" data-category="Picnic Spots">
+                <img src="alo.jpg" alt="Hilltop">
+                <p>Hilltop</p>
+            </div>
+        </div>
+        <div class="products-box" data-category="Regions">
+            <img src="assets/pedro-lastra-Nyvq2juw4_o-unsplash.jpg" alt="">
+        <p>Olive Jacket</p>
+        </div>
+        <div class="related-images-container" style="display:none;">
+            <div class="products-box" data-category="Regions">
+                <img src="alo.jpg" alt="Northern Region">
+                <p>Northern Region</p>
+            </div>
+            <div class="products-box" data-category="Regions">
+                <img src="alo.jpg" alt="Southern Region">
+                <p>Southern Region</p>
+            </div>
+        </div>
+        <div class="products-box" data-category="Regions">
+            <a href=""> <img src="assets/max-bender-VmX3vmBecFE-unsplash.jpg" alt=""></a>
+        <p>Black T-Shirt</p>
+        </div>
+        <div class="related-images-container" style="display:none;">
+            <div class="products-box" data-category="Regions">
+                <img src="alo.jpg" alt="Eastern Region">
+                <p>Eastern Region</p>
+            </div>
+            <div class="products-box" data-category="Regions">
+                <img src="alo.jpg" alt="Western Region">
+                <p>Western Region</p>
+            </div>
+        </div>
+        <div class="products-box" data-category="Spirituality">
+            <a href=""> <img src="assets/daniel-olah-2lMK4dgqwFM-unsplash.jpg" alt=""></a>
+        <p>White</p>
+        </div>
+        <div class="related-images-container" style="display:none;">
+            <div class="products-box" data-category="Spirituality">
+                <img src="alo.jpg" alt="Meditation">
+                <p>Meditation</p>
+            </div>
+            <div class="products-box" data-category="Spirituality">
+                <img src="alo.jpg" alt="Yoga">
+                <p>Yoga</p>
+            </div>
+        </div>
+        <div class="products-box" data-category="Spirituality">
+            <a href=""> <img src="assets/pavan-reddy-GuJYAp75BYo-unsplash.jpg" alt=""></a>
+        <p>White</p>
+        </div>
+        <div class="related-images-container" style="display:none;">
+            <div class="products-box" data-category="Spirituality">
+                <img src="alo.jpg" alt="Prayer">
+                <p>Prayer</p>
+            </div>
+            <div class="products-box" data-category="Spirituality">
+                <img src="alo.jpg" alt="Retreat">
+                <p>Retreat</p>
+            </div>
+        </div>
+        <div class="products-box" data-category="Food">
+            <a href=""> <img src="assets/prchi-palwe-3OMLWzkkt0Y-unsplash.jpg" alt=""></a>
+        <p>Whit</p>
+        </div>
+        <div class="related-images-container" style="display:none;">
+            <div class="products-box" data-category="Food">
+                <img src="alo.jpg" alt="Local Cuisine">
+                <p>Local Cuisine</p>
+            </div>
+            <div class="products-box" data-category="Food">
+                <img src="alo.jpg" alt="Street Food">
+                <p>Street Food</p>
+            </div>
+        </div>
+        <div class="products-box" data-category="Food">
+            <a href=""> <img src="assets/kobby-mendez-WXJ33HOrzvE-unsplash.jpg" alt=""></a>
+        <p>Wh</p>
+        </div>
+        <div class="related-images-container" style="display:none;">
+            <div class="products-box" data-category="Food">
+                <img src="alo.jpg" alt="Fine Dining">
+                <p>Fine Dining</p>
+            </div>
+            <div class="products-box" data-category="Food">
+                <img src="alo.jpg" alt="Traditional Dishes">
+                <p>Traditional Dishes</p>
+            </div>
+        </div>
+        <div class="products-box" data-category="Food">
+            <a href=""> <img src="assets/sara-scarpa-AJFQGDaFP-s-unsplash.jpg" alt=""></a>
+        <p>Whte </p>
+        </div>
+        
+        </div>
+    </div>
+    
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="caption"></div>
+    </div>
+
+    <!-- Bootstrap JS and Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="main.js"></script>
+    <script src="red-shirt-fix.js"></script>
+</body>
